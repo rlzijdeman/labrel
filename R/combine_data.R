@@ -107,11 +107,11 @@ download.file(paste0(giturl, "Russia/Russia_1800_(DK-June2011).xlsx"),
               destfile = paste0(download, "russia_1800.xlsx"), 
               method = "curl")
 
-download.file(paste0(giturl, "Russia/Russia_1900_(DK-June2011).xlsx"),
+download.file(paste0(giturl, "Russia/Russia_1900_(GK-June2011).xlsx"),
               destfile = paste0(download, "russia_1900.xlsx"), 
               method = "curl")
 
-download.file(paste0(giturl, "Russia/Russia_2000_(DK-June2011).xlsx"),
+download.file(paste0(giturl, "Russia/Russia_2000_(GK-June2011).xlsx"),
               destfile = paste0(download, "russia_2000.xlsx"), 
               method = "curl")
 
@@ -134,15 +134,15 @@ download.file(paste0(giturl, "Spain/Spain_2000_(JMTL-Sept2011).xlsx"),
               method = "curl")
 
 #### Taiwan ####
-download.file(paste0(giturl, "Taiwan/Taiwan_1500_(JMTL-Sept2011).xlsx"),
+download.file(paste0(giturl, "Taiwan/Taiwan_1500_(CMM-June2011).xlsx"),
               destfile = paste0(download, "taiwan_1500.xlsx"), 
               method = "curl")
 
-download.file(paste0(giturl, "Taiwan/Taiwan_1650_(JMTL-Sept2011).xlsx"),
+download.file(paste0(giturl, "Taiwan/Taiwan_1650_(CMM-June2011).xlsx"),
               destfile = paste0(download, "taiwan_1650.xlsx"), 
               method = "curl")
 
-download.file(paste0(giturl, "Taiwan/Taiwan_1800_(JMTL-Sept2011).xlsx"),
+download.file(paste0(giturl, "Taiwan/Taiwan_1800_(CMM-June2011).xlsx"),
               destfile = paste0(download, "taiwan_1800.xlsx"), 
               method = "curl")
 
