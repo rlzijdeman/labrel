@@ -106,7 +106,6 @@ download.file(paste0(giturl, "Russia/Russia_1650_(DK-June2011).xlsx"),
 download.file(paste0(giturl, "Russia/Russia_1800_(DK-June2011).xlsx"),
               destfile = paste0(download, "russia_1800.xlsx"), 
               method = "curl")
-
 download.file(paste0(giturl, "Russia/Russia_1900_(GK-June2011).xlsx"),
               destfile = paste0(download, "russia_1900.xlsx"), 
               method = "curl")
