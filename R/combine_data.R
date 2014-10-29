@@ -219,4 +219,13 @@ labrel.df <- do.call(rbind, data.list)
 write.csv(labrel.df, file = "./data/git_combine_data.csv")
 save(labrel.df, file = "./data/git_combine_data.Rda")
 
+#lines below are from lar8_slava_02.csv used for Shiny-server
+#"total","percent","area.region.country","country.code","ctry.time","year",
+#"txt1.1","txt1.2","txt1.3.ext","txt2.1","txt3.1","sortID","bmyear","sortID2"
 
+names(labrel.df)
+labrel.df.sub <- subset(labrel.df, 
+                        select = c("total","percent","area.region.country",
+                        "country.code","ctry.time","year",
+                        "txt1.1","txt1.2","txt1.3.ext","txt2.1","txt3.1",
+                        "sortID","bmyear","sortID2"))
