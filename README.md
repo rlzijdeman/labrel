@@ -9,6 +9,7 @@ This github site is used as a data repository for the [Global Collaboratory on t
 ###Data
 Data on labour relations are provided in the data directory. These data are offically released, while pre-released data of other countries and time periods is available from the [GCHLR](https:/collab.iisg.nl/web/LabourRelations/). Data are accompanied by methodological papers, explaining issues, assumptions and decisions made in the process of creating the data. Use of the data is permitted under the terms and conditions as specified in the license agreement provided in the main directory.
 NOTE: To download the data:
+- click on the data folder (on top of this screen)
 - click on a country folder
 - click on a year of your choice
 - then click 'RAW' in the upper right section of your screen
