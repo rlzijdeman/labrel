@@ -1,0 +1,31 @@
+
+
+
+
+JSTOR CITATION LIST
+
+@comment{{ Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use https://www.jstor.org/page/info/about/policies/terms.jsp. If you have questions or need assistance using JSTOR, please contact JSTOR Support (https://www.jstor.org/action/showContactSupportForm) and let us know how we can help you. }}
+@comment{{NUMBER OF CITATIONS : 1}}
+
+    @article{2001,
+     jstor_articletype = {research-article},
+     title = {Self-Employment Dynamics and Self-Employment Trends: A Study of Canadian Men and Women, 1982-1998},
+     author = {Kuhn, Peter J. and Schuetze, Herb J.},
+     journal = {The Canadian Journal of Economics / Revue canadienne d'Economique},
+     jstor_issuetitle = {},
+     volume = {34},
+     number = {3},
+     jstor_formatteddate = {Aug., 2001},
+     pages = {pp. 760-784},
+     url = {http://www.jstor.org/stable/3131894},
+     ISSN = {00084085},
+     abstract = {Self-employment has risen dramatically in Canada, accounting for a disproportionate share of job growth since the 1980s. Using hitherto unexploited information on labour force transitions from sixteen waves of the Survey of Consumer Finances between 1982 and 1998, we show that the changes in transition patterns underlying these increases were very different for women and men. For women, most of the increase in self-employment is attributable to an increase in retention rates in self-employment. For men, most is attributable to a decrease in the stability of paid employment. Self-employment thus rose both in secularly improving (women's) and deteriorating (men's) labour markets. JEL Classification: J23, J63},
+     language = {English},
+     year = {2001},
+     publisher = {Wiley on behalf of the Canadian Economics Association},
+     copyright = {Copyright © 2001 Canadian Economics Association},
+    }
+
+
+@comment{{ These records have been provided through JSTOR. http://www.jstor.org }}
+
