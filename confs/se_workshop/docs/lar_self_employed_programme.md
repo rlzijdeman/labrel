@@ -1,4 +1,4 @@
-# Self-employment in historical macro-micro perspective
+# Self-employment in historical [macro-micro>weg?] perspective
 
 *January 27-29, 2016*
 
