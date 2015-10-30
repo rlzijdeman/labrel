@@ -1,4 +1,4 @@
-﻿* Encoding: UTF-8.
+* Encoding: UTF-8.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
 EXECUTE.
@@ -112,9 +112,12 @@ IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTA
     14 | EMPSTATD = 15) | ((MISSING(EMPSTATD) & YEAR = 1920) & ( CLASSWKRD = 11 )))) LABREL=13. 
 EXECUTE. 
 /* Ben niet zeker of CLASSWKRD=14 (="Self-employed, incorporated"; waarbij incorporated betekent of het bedrijf is geregistreerd bij de belastingdienst) als employer kan worden gerekend. 
-/* Nu 12a013. Hele reeks self-employed en employer nog eens goed nakijken. IPUMS meldt: "Employers can be distinguished from other self-employed persons "working on own account" in 1910, 
-/* 1920, 1930, and 1940, but this distinction cannot be made in later years. The 1970-2000 censuses, the ACS and the PRCS distinguish between employers and other self-employed persons whose 
-/* businesses/farms were incorporated and those whose businesses/farms were not". 
+/* Hippler 2009 hierover: "Since 1967, the offcial estimates of self-employment published by the Bureau of Labor Statistics (BLS, the Bureau) have included only the unincorporated self-employed. 
+/* Although it is possible to identify the incorporated self-employed separately, these individuals are counted as wage and salary workers in the official statistics because, 
+/* from a legal standpoint, they are employees of their own businesses.". 
+/* Nu dus 12a013, niet iedereen zal employer geweest zijn: veel om belasting redenen. Hele reeks self-employed en employer nog eens goed nakijken. 
+/* IPUMS meldt: "Employers can be distinguished from other self-employed persons "working on own account" in 1910, 1920, 1930, and 1940, but this distinction cannot be made in later years.
+/* The 1970-2000 censuses, the ACS and the PRCS distinguish between employers and other self-employed persons whose businesses/farms were incorporated and those whose businesses/farms were not". 
 
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | ((MISSING(EMPSTATD) & YEAR = 1920) & ( CLASSWKRD = 12 | CLASSWKRD = 13 )))) LABREL=121. 
 EXECUTE.  
