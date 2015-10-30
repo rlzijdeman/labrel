@@ -1,11 +1,13 @@
-/* Toepasbaar op de jaarlijkse ASEC surveys, via cps.ipums.org */
+﻿* Encoding: UTF-8.
+/* Toepasbaar op de jaarlijkse ASEC surveys, via cps.ipums.org.
 WEIGHT BY WTSUPP.
 
 NUMERIC LR_SHIFTLY (f4).
 IF (CLASSWKR = CLASSWLY) LR_SHIFTLY = 0.
 IF (CLASSWKR ~= CLASSWLY) LR_SHIFTLY = 1.
 EXECUTE.
-/* Shift in laatste jaar ja (1) of nee (0). */
+/* Shift in laatste jaar ja (1) of nee (0).
+
 VARIABLE LABELS LR_SHIFTLY "Shift in labour relation in preceding year?".
 VALUE LABELS LR_SHIFTLY
 0 "No"
@@ -17,7 +19,7 @@ EXECUTE.
 
 STRING LR_SHIFTLYD (a4).
 EXECUTE.
-/* Dit is de gedetailleerde variant van de labrel shift. */
+/* Dit is de gedetailleerde variant van de labrel shift.
 
 COMPUTE LR_SHIFTLYD = concat(string(CLASSWLY,f2),string(CLASSWKR,f2)).
 EXECUTE. 
@@ -149,7 +151,7 @@ ADD VALUE LABELS LR_SHIFTLYD
 NUMERIC LR_SHIFTLYA (f4).
 COMPUTE LR_SHIFTLYA = LR_SHIFTLYD.
 EXECUTE.
-/* Dit is de geaggregeerde variant, met minder mogelijke waarden. */
+/* Dit is de geaggregeerde variant, met minder mogelijke waarden.
 
 VARIABLE LABELS LR_SHIFTLYA "Shift in labour relation in preceding year, aggregated".
 ADD VALUE LABELS LR_SHIFTLYA 

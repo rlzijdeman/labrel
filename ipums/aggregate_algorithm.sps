@@ -1,3 +1,4 @@
+﻿* Encoding: UTF-8.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
 EXECUTE.
@@ -42,25 +43,26 @@ EXECUTE.
 
 IF  (MISSING(LABREL)  & AGE <= 16) LABREL=1. 
 EXECUTE. 
-/* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over tijd. Ongeveer 1-3% van alle individuen van 16jr en jonger uit het VS bestand is wel degelijk werkzaam volgens de census. Vaak gaat het dan om 14, 15, 16jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd. */
+/* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over tijd. Ongeveer 1-3% van alle individuen van 16jr en jonger uit het VS bestand is wel degelijk werkzaam volgens de census. 
+/* Vaak gaat het dan om 14, 15, 16jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
 IF  (MISSING(LABREL) & (OCC1950 = 987)) LABREL=8. 
 EXECUTE.
-/* Inmates: hier al, omdat deze anders of bij labrel 1, 105 of 3 terecht komen. */
+/* Inmates: hier al, omdat deze anders of bij labrel 1, 105 of 3 terecht komen.
 IF  (MISSING(LABREL) & OCC1950 = 991) LABREL=2. 
 EXECUTE.
-/* Gentleman/lady/at leisure, zelfde reden. */
+/* Gentleman/lady/at leisure, zelfde reden.
 IF  (MISSING(LABREL)  & (EMPSTATD = 32 | EMPSTATD = 33)) LABREL=1. 
 EXECUTE.
 IF  (MISSING(LABREL)  & (EMPSTATD = 34)) LABREL=105. 
 EXECUTE.
-/* "Not in labour force, other" > restant na aftrek 'Housework', 'School', 'Unable'. O.a. "people who simply choose not to work or to look for work"? Maar afgaand van enkele voorbeelden lijkt affluent (2) toch niet helemaal juist. */
+/* "Not in labour force, other" > restant na aftrek 'Housework', 'School', 'Unable'. O.a. "people who simply choose not to work or to look for work"? Maar afgaand van enkele voorbeelden lijkt affluent (2) toch niet helemaal juist.
 IF  (MISSING(LABREL)  & (EMPSTATD = 20 | EMPSTATD = 21 | EMPSTATD = 22)) LABREL=3. 
 EXECUTE. 
 IF  (MISSING(LABREL)  & (EMPSTATD = 31)) LABREL=5. 
 EXECUTE. 
 IF  (MISSING(LABREL)  & (EMPSTATD = 30)) LABREL=105. 
 EXECUTE.
-/* Volgende set hier nu ingevoegd, om te voorkomen dat deze beroepen worden verdeeld over alles en nog wat */
+/* Volgende set hier nu ingevoegd, om te voorkomen dat deze beroepen worden verdeeld over alles en nog wat.
 IF  (MISSING(LABREL) & (OCC1950 = 9 | OCC1950 = 595)) LABREL=18.
 EXECUTE.
 IF  (MISSING(LABREL) & OCC1950 = 820) LABREL=14.
@@ -78,24 +80,25 @@ EXECUTE.
 IF  (MISSING(LABREL) & OCC1950 = 995) LABREL=105.
 EXECUTE.
 /* Het gaat hier om beroepencoderingen in OCC1950 die onmiskenbaar een bepaalde labrel vertegenwoordigen:
-009: Clergymen [18]
-595: Members of the armed services [18]
-820: Farm laborers, wage workers [14]
-830: Farm laborers, unpaid family workers [12b]
-840: Farm service workers, self-employed [12a]
+/* 009: Clergymen [18]
+/* 595: Members of the armed services [18]
+/* 820: Farm laborers, wage workers [14]
+/* 830: Farm laborers, unpaid family workers [12b]
+/* 840: Farm service workers, self-employed [12a]
+/* 
+/* En de 'non-occupational responses' 1850-1930:
+/* 980: Keeps house/housekeeping at home/housewife [5]
+/* 981: Inputed keeping house (1850-1900) [5]
+/* 982: Helping at home/helps parents/housework [5]
+/* 983: At school/student [1]
+/* 984: Retired [1]
+/* 985: Unemployed/without occupation [3]
+/* 986: Invalid/disabled with no occupation reported [1]
+/* *987: Inmate [8]
+/* 990: New Worker [3]
+/* *991: Gentleman/lady/at leisure [2]
+/* 995: Other non-occupational response [105].
 
-En de 'non-occupational responses' 1850-1930:
-980: Keeps house/housekeeping at home/housewife [5]
-981: Inputed keeping house (1850-1900) [5]
-982: Helping at home/helps parents/housework [5]
-983: At school/student [1]
-984: Retired [1]
-985: Unemployed/without occupation [3]
-986: Invalid/disabled with no occupation reported [1]
-*987: Inmate [8]
-990: New Worker [3]
-*991: Gentleman/lady/at leisure [2]
-995: Other non-occupational response [105] */
 IF  (MISSING(LABREL)  & EMPSTATD = 00 & YEAR = 1910 & CLASSWKRD = 11) LABREL=13. 
 EXECUTE. 
 IF  (MISSING(LABREL)  & EMPSTATD = 00 & YEAR = 1910 & CLASSWKRD = 12) LABREL=121. 
@@ -108,7 +111,11 @@ EXECUTE.
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 
     14 | EMPSTATD = 15) | ((MISSING(EMPSTATD) & YEAR = 1920) & ( CLASSWKRD = 11 )))) LABREL=13. 
 EXECUTE. 
-/* Ben niet zeker of CLASSWKRD=14 (="Self-employed, incorporated"; waarbij incorporated betekent of het bedrijf is geregistreerd bij de belastingdienst) als employer kan worden gerekend. Nu 12a013. Hele reeks self-employed en employer nog eens goed nakijken. IPUMS meldt: "Employers can be distinguished from other self-employed persons "working on own account" in 1910, 1920, 1930, and 1940, but this distinction cannot be made in later years. The 1970-2000 censuses, the ACS and the PRCS distinguish between employers and other self-employed persons whose businesses/farms were incorporated and those whose businesses/farms were not." */  
+/* Ben niet zeker of CLASSWKRD=14 (="Self-employed, incorporated"; waarbij incorporated betekent of het bedrijf is geregistreerd bij de belastingdienst) als employer kan worden gerekend. 
+/* Nu 12a013. Hele reeks self-employed en employer nog eens goed nakijken. IPUMS meldt: "Employers can be distinguished from other self-employed persons "working on own account" in 1910, 
+/* 1920, 1930, and 1940, but this distinction cannot be made in later years. The 1970-2000 censuses, the ACS and the PRCS distinguish between employers and other self-employed persons whose 
+/* businesses/farms were incorporated and those whose businesses/farms were not". 
+
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | ((MISSING(EMPSTATD) & YEAR = 1920) & ( CLASSWKRD = 12 | CLASSWKRD = 13 )))) LABREL=121. 
 EXECUTE.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15)  | ((MISSING(EMPSTATD) & YEAR = 1920) & ( CLASSWKRD = 29 )))) LABREL=122. 
@@ -119,11 +126,12 @@ IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTA
 EXECUTE.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15)  | ((MISSING(EMPSTATD) &  YEAR = 1920) &  CLASSWKRD = 22 ))) LABREL=14. 
 EXECUTE.  
-IF  (MISSING(LABREL) & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | ((MISSING(EMPSTATD) &  YEAR = 1920) & ( CLASSWKRD = 23 | CLASSWKRD = 24 | CLASSWKRD = 25 | CLASSWKRD = 26 | CLASSWKRD = 27 | CLASSWKRD = 28 )))) LABREL=18. 
+IF  (MISSING(LABREL) & ((EMPSTATD=10 | EMPSTATD=11 | EMPSTATD=12 | EMPSTATD=13 | EMPSTATD=14 | EMPSTATD=15) | ((MISSING(EMPSTATD) &  YEAR=1920) & ( CLASSWKRD=23 | CLASSWKRD=24 | CLASSWKRD=25 | CLASSWKRD=26 | CLASSWKRD=27 | CLASSWKRD=28 )))) LABREL=18.
 EXECUTE. 
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & YEAR = 1850 & LABFORCE = 0)) LABREL=-1. 
 EXECUTE.  
-/* Het probleem is dat de 1850 census alleen mensen "in the labour force" noemt, als zij man en 16+ zijn. Dat betekent dat alle vrouwen als "niet-werkend" worden opgevat. In vergelijking met 1860 zal ongeveer 18% van deze groep (944,614) een labrel tussen 12a en 18 moeten hebben; de rest is 105 (al kun je je ook daar van afvragen of het niet gaat om een onderrepresentatie van vrouwenarbeid). */
+/* Het probleem is dat de 1850 census alleen mensen "in the labour force" noemt, als zij man en 16+ zijn. Dat betekent dat alle vrouwen als "niet-werkend" worden opgevat. 
+/* In vergelijking met 1860 zal ongeveer 18% van deze groep (944,614) een labrel tussen 12a en 18 moeten hebben; de rest is 105 (al kun je je ook daar van afvragen of het niet gaat om een onderrepresentatie van vrouwenarbeid).
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & YEAR ~= 1850 & LABFORCE = 0)) LABREL=-1. 
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & LABFORCE = 1)) LABREL=105. 
@@ -149,7 +157,8 @@ IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 830 )) LABREL=122. 
 EXECUTE.  
-/* Je kunt je afvragen of we niet beter gewoon alle OCC1950=830 als LABREL=122 kunnen coderen, al is dat al gebeurd via CLASSWKR als die juist is gecodeerd in IPUMS. Dat blijkt echter niet het geval, OCC1950=830 heeft allerlei uiteenlopende CLASSWKR coderingen (zie ook aantal andere beroepen). Moeten die niet voorrang krijgen in dit stroomschema, dus voordat de labrels via CLASSWKR worden verdeeld? */
+/* Je kunt je afvragen of we niet beter gewoon alle OCC1950=830 als LABREL=122 kunnen coderen, al is dat al gebeurd via CLASSWKR als die juist is gecodeerd in IPUMS. 
+/* Dat blijkt echter niet het geval, OCC1950=830 heeft allerlei uiteenlopende CLASSWKR coderingen (zie ook aantal andere beroepen). Moeten die niet voorrang krijgen in dit stroomschema, dus voordat de labrels via CLASSWKR worden verdeeld?.
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & ( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2)) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 ) & ( OCC1950 = 1 | OCC1950 = 5 | OCC1950 = 6 | OCC1950 = 8 | 
