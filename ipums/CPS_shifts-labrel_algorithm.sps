@@ -1,5 +1,5 @@
 ﻿* Encoding: UTF-8.
-/* Toepasbaar op de jaarlijkse ASEC surveys, via cps.ipums.org.
+/* Toepasbaar op de jaarlijkse ASEC surveys, via cps.ipums.org. Use file "CPS Yearly 1962-2015.sav"
 WEIGHT BY WTSUPP.
 
 NUMERIC LR_SHIFTLY (f4).
