@@ -1,3 +1,4 @@
+*/ Use file "USA IPUMS 1850-2010.sav".
 * Encoding: UTF-8.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
