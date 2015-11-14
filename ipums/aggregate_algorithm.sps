@@ -42,7 +42,7 @@ VALUE LABELS LABREL
 183 "18.3: Wage earners for non-market institutions, time-rate workers".
 EXECUTE.
 
-IF  (MISSING(LABREL)  & AGE <= 16) LABREL=1. 
+IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-1. 
 EXECUTE. 
 /* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over tijd. Ongeveer 1-3% van alle individuen van 16jr en jonger uit het VS bestand is wel degelijk werkzaam volgens de census. 
 /* Vaak gaat het dan om 14, 15, 16jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
