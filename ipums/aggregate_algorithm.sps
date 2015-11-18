@@ -142,24 +142,24 @@ IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & LABFORCE = 1)) LABREL=105.
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 995 | OCC1950 = 997 )) LABREL=-1. 
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 995 | OCC1950 = 997 ))) LABREL=-1. 
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 983 | OCC1950 = 984 | OCC1950 = 985 | OCC1950 = 
-    986 )) LABREL=1. 
+    986 ))) LABREL=1. 
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 980 | OCC1950 = 981 | OCC1950 = 982 )) LABREL=5. 
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 980 | OCC1950 = 981 | OCC1950 = 982 ))) LABREL=5. 
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 987 )) LABREL=8. 
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 987 ))) LABREL=8. 
 EXECUTE.  
 IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 830 )) LABREL=122. 
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 830 ))) LABREL=122. 
 EXECUTE.  
 /* Je kunt je afvragen of we niet beter gewoon alle OCC1950=830 als LABREL=122 kunnen coderen, al is dat al gebeurd via CLASSWKR als die juist is gecodeerd in IPUMS. 
 /* Dat blijkt echter niet het geval, OCC1950=830 heeft allerlei uiteenlopende CLASSWKR coderingen (zie ook aantal andere beroepen). Moeten die niet voorrang krijgen in dit stroomschema, dus voordat de labrels via CLASSWKR worden verdeeld?.
