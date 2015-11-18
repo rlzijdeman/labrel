@@ -80,6 +80,7 @@ IF  (MISSING(LABREL)  & EMPSTATD = 31) LABREL=5.
 EXECUTE. 
 IF  (MISSING(LABREL)  & EMPSTATD = 30) LABREL=105. 
 EXECUTE.
+/* Dit omvat ook alle gepensioneerden. Moeten we een cutoff point bij bepaalde leeftijd maken?.
 
 /* Volgende set hier nu ingevoegd, om te voorkomen dat deze beroepen worden verdeeld over alles en nog wat.
 IF  (MISSING(LABREL) & (OCC1950 = 9 | OCC1950 = 595)) LABREL=18.
