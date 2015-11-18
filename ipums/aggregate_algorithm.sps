@@ -1,5 +1,5 @@
-*/ Use file "USA IPUMS 1850-2010.sav".
 * Encoding: UTF-8.
+GET FILE='/Users/RombertSt/Desktop/IPUMS/USA IPUMS 1850-2010.sav'.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
 EXECUTE.
