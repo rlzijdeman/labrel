@@ -39,13 +39,20 @@ VALUE LABELS LABREL
 18 "18: Wage earners for non-market institutions"
 181 "18.1: Wage earners for non-market institutions, sharecropping workers"
 182 "18.2: Wage earners for non-market institutions, piece-rate workers"
-183 "18.3: Wage earners for non-market institutions, time-rate workers".
+183 "18.3: Wage earners for non-market institutions, time-rate workers"
+105 "1 or 5: Cannot work or cannot be expected to work or Household kin non-producer"
+121013 "12a or 13: Self-employed leading producer or Employer"
+14018 "14 or 18: Wage earners for the market or Wage earners for non-market institutions"
+121014 "12a or 14: Self-employed leading producer or Wage earners for the market"
+121013014 "12a or 13 or 14: Self-employed leading producer or Employer or Wage earners for the market"
+121014018 "12a or 14 or 18: Self-employed leading producer or Wage earners for the market or Wage earners for non-market institutions".
 EXECUTE.
 
-IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-1. 
-EXECUTE. 
-/* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over tijd. Ongeveer 1-3% van alle individuen van 16jr en jonger uit het VS bestand is wel degelijk werkzaam volgens de census. 
-/* Vaak gaat het dan om 14, 15, 16jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
+/* IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-1. 
+/* EXECUTE. 
+/* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over tijd. Ongeveer 1-3% van alle individuen van 16jr (sic, oude berekening) en jonger uit het VS bestand is wel degelijk werkzaam volgens de census. 
+/* Vaak gaat het dan om 14, 15jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
+/* UPDATE: Een betere manier is om dit weg te laten (we vergelijken immers individuen, en de consistente vergelijking is vooral nuttig bij geaggregeerde data). Mochten we toch geaggregeerde data willen, is het super makkelijk om achteraf alles af te toppen, ipv vooraf.
 IF  (MISSING(LABREL) & (OCC1950 = 987)) LABREL=8. 
 EXECUTE.
 /* Inmates: hier al, omdat deze anders of bij labrel 1, 105 of 3 terecht komen.
