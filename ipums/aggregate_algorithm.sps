@@ -238,3 +238,4 @@ IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & ( YEAR = 1920 & CLASSWKRD = 00 ) | (
     LABFORCE = 2)) | ( (EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 ) & OCC1950 = 75) LABREL=121014018. 
 EXECUTE.
+*/ Running the syntax on 17/11/2015 took 52 minutes on a OS X El Capitan: MacBook Pro 11,2 / Intel Core i7 / 2.8 GHz quadcore / 16GB memory.
