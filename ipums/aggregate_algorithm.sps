@@ -1,5 +1,6 @@
 * Encoding: UTF-8.
 GET FILE='/Users/RombertSt/Desktop/IPUMS/USA IPUMS 1850-2010.sav'.
+/* Pas locatie (+ eventueel naam) aan van bestand.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
 EXECUTE.
