@@ -6,6 +6,18 @@
 
 *International Institute of Social History, Amsterdam*
 
+## TODO (uit mail KHO 2015-10-09)
+- Blanchflower vervangen door Henley ???
+- Bogenhold goed, maar kan het theoretisch, internationaal?
+- Udo Staber uit programma, check of Bogenhold nog wel relevant is
+- Moore en Mueller zijn niet meer relevant???
+- Ardagna in het programma (zie attach van mail KHO, 2015-10-09) en zie ook: http://www.gemconsortium.org/ 
+- Duidelijk maken wat iedere sessie betekent en hoe het aansluit bij het pos.paper, met name voor sessie 2/3
+- Glen Carrol checken: lijkt niet meer relevant ???
+- definitie self-employed
+- self-employment wordt vertekent door afname agrarische sector, derhalve analyses voor zowel met als zonder boeren
+
+
 
 ## Introduction
 The *Global Collaboratory on the History of Labour Relations* is organizing a series of workshops on shifting labour relations, here defined as for or with whom one works[^fn], in the world over the past five centuries. This workshop is the fourth in the series and focusses on shifts in and out of self-employment. Self-employment is an interesting labour relation, as self-employment allows people to earn a living, while to a large extent surpassing (im)plicit expectations about, for example, educational training and past experience, that usually are required to obtain a position on the labour market. While in some instances self-employment is intentional, not seldom self-employment is the result of exclusion from the labour market, for example due to sex, ethnicity or religion. Nevertheless, in both the voluntary and involuntary case, self-employment provides access to means of living when regulated access to the labour market is impaired by respectively (in)formal exclusion or personal preferences.
