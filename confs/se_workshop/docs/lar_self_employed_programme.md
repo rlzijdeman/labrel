@@ -122,15 +122,15 @@ Session four and five are specific instances of respectively session two and thr
 |             |                                                        |                                                     |
 | 15.00-15.45 | Hofmeester / Lucassen                                  | 1500-2000 global shifts                             |
 |             |                                                        |                                                     |
-| 16.00-16.45 | Bögenhold & Staber                                     | Contemporary cross-national comparisons             |
+| 16.00-16.45 | Bögenhold                                              | Contemporary cross-national comparisons             |
 |             |                                                        |                                                     |
-| 16.45-17.30 | Moore / Mueller                                        | Canada 1990's push factors                          |
+| 16.45-17.30 | Vanhaute                                               | Self-employment and agriculture                     |
 | 18.00 -     | Drinks and dinner                                      |                                                     |
 | Session 2:  | **Macro: shifts in labour relations**                  |                                                     |
 |             |                                                        |                                                     |
 | 09.15-09.30 | Coffee                                                 |                                                     |
 |             |                                                        |                                                     |
-| 09.30-10.15 | Caracausi **ERUIT?**                                   | Early modern Mediterranean                          |
+| 09.30-10.15 | Stapel & Zijdeman                                      | IPUMS International                                 |
 |             |                                                        |                                                     |
 | 10.15-11.00 | Dawson                                                 | UK, regional comparison, 1999-2000                  |
 |             |                                                        |                                                     |
@@ -140,11 +140,11 @@ Session four and five are specific instances of respectively session two and thr
 |             |                                                        |                                                     |
 | 14.00-14.45 | Kessler                                                | Russia, 1700-2000                                   |
 |             |                                                        |                                                     |
-| 14.45-15.30 | Ajayi-Obe &  Parker                                    | UK 1990, BHPS, detailed individual data             |
+| 14.45-15.30 | Parker                                                 | UK 1990, BHPS, detailed individual data             |
 | 15.30-16.00 | Coffee                                                 |                                                     |
 | Session 4:  | **Self-employed as a life-course strategy**            |                                                     |
 |             |                                                        |                                                     |
-| 16.00-17.15 | Carroll & Mosakowski                                   | West-Germany, firms,family spells 1960              |
+| 16.00-17.15 | Schuetze                                               | Self-employment and old age                         |
 |             |                                                        |                                                     |
 | 17.15-18.00 | Nordman & Pasquier-Doumer                              | West Africa, 21st c, family networks, shifts in LRs |
 | 19.00 -     | Conference dinner                                      |                                                     |
@@ -156,7 +156,7 @@ Session four and five are specific instances of respectively session two and thr
 |             |                                                        |                                                     |
 | 10.15-11.00 | Jan Lucassen – Lipper data                             | Germany, 1 city, long 18th century                  |
 |             |                                                        |                                                     |
-| 11.45-13.00 | W. David Allen (USA, Huntsvill)                        | US, 1 city, ca. 2000, detailed context              |
+| 11.45-13.00 | W. David Allen (USA, Huntsville)                       | US, 1 city, ca. 2000, detailed context              |
 | 13.00-13.30 | Plenary discussion and conclusions                     |                                                     |
 |             |                                                        |                                                     |
 | 13.30-14.30 | Lunch and good bye                                     |                                                     | 
