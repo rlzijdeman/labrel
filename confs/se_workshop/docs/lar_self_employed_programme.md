@@ -156,11 +156,5 @@ Session four and five are specific instances of respectively session two and thr
 |             |                                                        |                                                     |
 | 13.30-14.30 | Lunch and good bye                                     |                                                     | 
 
-Backup or other options: 
-Eric Vanhaute (agriculture)
-Chris Minns (http://www.lse.ac.uk/researchAndExpertise/Experts/profile.aspx?KeyValue=c.minns%40lse.ac.uk)
-Zijdeman & Stapel: US, long 20th century, households
-Een hele goede optie is ook Henrekson (zie artikel).
-Jacques van Gerwen?
 
 [^fn]: Labour relations define for or with whom one works and under what rules. These rules (implicit or explicit, written or unwritten) determine the type of work, type and amount of remuneration, working hours, degrees of physical and psychological strain, as well as the degree of freedom and autonomy associated with the work.
