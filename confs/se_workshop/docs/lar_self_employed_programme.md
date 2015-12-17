@@ -9,13 +9,8 @@
 ## TODO (uit mail KHO 2015-10-09)
 - Blanchflower vervangen door Henley ???
 - Bogenhold goed, maar kan het theoretisch, internationaal?
-- Udo Staber uit programma, check of Bogenhold nog wel relevant is
-- Moore en Mueller zijn niet meer relevant???
 - Ardagna in het programma (zie attach van mail KHO, 2015-10-09) en zie ook: http://www.gemconsortium.org/ 
 - Duidelijk maken wat iedere sessie betekent en hoe het aansluit bij het pos.paper, met name voor sessie 2/3
-- Glen Carrol checken: lijkt niet meer relevant ???
-- definitie self-employed
-- self-employment wordt vertekent door afname agrarische sector, derhalve analyses voor zowel met als zonder boeren
 
 
 
