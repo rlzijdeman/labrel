@@ -125,7 +125,7 @@ Session four and five are specific instances of respectively session two and thr
 |             |                                                        |                                                     |
 | 09.15-09.30 | Coffee                                                 |                                                     |
 |             |                                                        |                                                     |
-| 09.30-10.15 | Stapel & Zijdeman                                      | IPUMS International                                 |
+| 09.30-10.15 | Kessler                                                | Russia, 1700-1900                                   |
 |             |                                                        |                                                     |
 | 10.15-11.00 | Dawson                                                 | UK, regional comparison, 1999-2000                  |
 |             |                                                        |                                                     |
@@ -133,7 +133,7 @@ Session four and five are specific instances of respectively session two and thr
 | 13.00-14.00 | Lunch                                                  |                                                     |
 | Session 3:  | **Micro: shifts in labour relations**                  |                                                     |
 |             |                                                        |                                                     |
-| 14.00-14.45 | Kessler                                                | Russia, 1700-2000                                   |
+| 14.00-14.45 | Stapel & Zijdeman                                      | IPUMS International                                 |
 |             |                                                        |                                                     |
 | 14.45-15.30 | Parker                                                 | UK 1990, BHPS, detailed individual data             |
 | 15.30-16.00 | Coffee                                                 |                                                     |
