@@ -5,7 +5,8 @@
 *Global Collaboratory on the History of Labour Relations Workshop*
 
 *International Institute of Social History, Amsterdam*
-Sponsored by the *Gerda Henkel Stiftung*
+
+Sponsored by the *Gerda Henkel Stiftung, Düsseldorf*
 
 ## Introduction
 The *Global Collaboratory on the History of Labour Relations* is organizing a series of workshops on shifting labour relations in the world over the past five centuries. Labour relations define for or with whom one works[^fn]. This perspective is analogous to that of contemporary studies on employer-employee relations, labour relations distinguish between many more types of relationships between persons working for or alongside each other. This workshop is the fourth in the series and focusses on shifts in and out of self-employment. Self-employment is an interesting labour relation, as self-employment allows people to earn a living, while to a large extent surpassing (im)plicit expectations about, for example, educational training and past experience, that usually are required to obtain a position as wage labourer on the labour market. While in some instances self-employment is intentional, not seldom – at least in societies in which wage labour in well established – self-employment is the result of exclusion from the labour market, for example due to discrimination on grounds of sex, ethnicity or religion. Nevertheless, in both the voluntary and involuntary case, self-employment provides access to means of living when regulated access to the labour market is impaired by respectively (in)formal exclusion or personal preferences.
