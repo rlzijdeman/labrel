@@ -53,11 +53,8 @@ Session four and five are specific instances of respectively session two and thr
 | Session 1:  | **Mechanisms of shifts in and out of self-employment** |                                                     |
 |             |                                                        |                                                     |
 | 14.15-15.00 | Talk 1                                                 |                                                     |
-|             |                                                        |                                                     |
 | 15.00-15.45 | Talk 2                                                 |                                                     |
-|             |                                                        |                                                     |
 | 16.00-16.45 | Talk 3                                                 |                                                     |
-|             |                                                        |                                                     |
 | 16.45-17.30 | Talk 4                                                 |                                                     |
 |             |                                                        |                                                     |
 | 18.00 -     | Drinks and dinner                                      |                                                     |
@@ -67,9 +64,7 @@ Session four and five are specific instances of respectively session two and thr
 | 09.15-09.30 | Coffee                                                 |                                                     |
 |             |                                                        |                                                     |
 | 09.30-10.15 | Talk 5                                                 |                                                     |
-|             |                                                        |                                                     |
 | 10.15-11.00 | Talk 6                                                 |                                                     |
-|             |                                                        |                                                     |
 | 11.45-13.00 | Talk 7                                                 |                                                     |
 |             |                                                        |                                                     |
 | 13.00-14.00 | Lunch                                                  |                                                     |
@@ -77,7 +72,6 @@ Session four and five are specific instances of respectively session two and thr
 | Session 3:  | **Micro: shifts in labour relations**                  |                                                     |
 |             |                                                        |                                                     |
 | 14.00-14.45 | Talk 8                                                 |                                                     |
-|             |                                                        |                                                     |
 | 14.45-15.30 | Talk 9                                                 |                                                     |
 |             |                                                        |                                                     |
 | 15.30-16.00 | Coffee                                                 |                                                     |
@@ -85,7 +79,6 @@ Session four and five are specific instances of respectively session two and thr
 | Session 4:  | **Self-employed as a life-course strategy**            |                                                     |
 |             |                                                        |                                                     |
 | 16.00-17.15 | Talk 10                                                |                                                     |
-|             |                                                        |                                                     |
 | 17.15-18.00 | Talk 11                                                |                                                     |
 |             |                                                        |                                                     |
 | 19.00 -     | Conference dinner                                      |                                                     |
@@ -95,9 +88,7 @@ Session four and five are specific instances of respectively session two and thr
 | 09.15-09.30 | Coffee                                                 |                                                     |
 |             |                                                        |                                                     |
 | 09.30-10.15 | Talk 12                                                |                                                     |
-|             |                                                        |                                                     |
 | 10.15-11.00 | Talk 13                                                |                                                     |
-|             |                                                        |                                                     |
 | 11.45-13.00 | Talk 14                                                |                                                     |
 |             |                                                        |                                                     |
 | 13.00-13.30 | Plenary discussion and conclusions                     |                                                     |
