@@ -170,6 +170,7 @@ EXECUTE.
 
 /* Allocation in case of missing only CLASSWKD (01/2016: 8.3% samples, 23/276, average year 1997).
 
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 100) LABREL = 10205.      /*NIU (not in universe) [In years with MISSING(CLASSWKD), this is a large part of the non-working population: therefore LABREL = 10205 instead of -1].
 IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 100) LABREL = 121014018.  /*EMPLOYED, not specified.
 IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 110) LABREL = 121014018.  /*At work.
 IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 111) LABREL = 121014018.  /*At work, and 'student'.
