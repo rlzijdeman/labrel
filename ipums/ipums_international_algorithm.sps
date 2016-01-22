@@ -165,91 +165,91 @@ EXECUTE.
 
 /* Allocation in case of missing occupational data (01/2016: 3.2% samples, 9/276, average year 1982).
 
-IF (MISSING(EMPSTATD) & MISSING(CLASSWKRD)) LABREL = -1.
+IF (MISSING(EMPSTATD) & MISSING(CLASSWKD)) LABREL = -1.
 EXECUTE.
 
-/* Allocation in case of missing only CLASSWKRD (01/2016: 8.3% samples, 23/276, average year 1997).
+/* Allocation in case of missing only CLASSWKD (01/2016: 8.3% samples, 23/276, average year 1997).
 
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 100) LABREL = 121014018.  /*EMPLOYED, not specified.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 110) LABREL = 121014018.  /*At work.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 111) LABREL = 121014018.  /*At work, and 'student'.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 112) LABREL = 121014018.  /*At work, and 'housework'.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 113) LABREL = 121014018.  /*At work, and 'seeking work'.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 114) LABREL = 121014018.  /*At work, and 'retired'.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 115) LABREL = 121014018.  /*At work, and 'no work'.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 116) LABREL = 121014018.  /*At work, and other situation.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 117) LABREL = 121014018.  /*At work, family holding, not specified.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 118) LABREL = 121014018.  /*At work, family holding, not agricultural.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 119) LABREL = 121014018.  /*At work, family holding, agricultural.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 120) LABREL = 121014018.  /*Have job, not at work in reference period.
-IF (MISSING(LABREL) & MISSING(CLASSWKRD) & EMPSTATD = 140) LABREL = 121014018.  /*Marginally employed.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 100) LABREL = 121014018.  /*EMPLOYED, not specified.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 110) LABREL = 121014018.  /*At work.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 111) LABREL = 121014018.  /*At work, and 'student'.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 112) LABREL = 121014018.  /*At work, and 'housework'.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 113) LABREL = 121014018.  /*At work, and 'seeking work'.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 114) LABREL = 121014018.  /*At work, and 'retired'.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 115) LABREL = 121014018.  /*At work, and 'no work'.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 116) LABREL = 121014018.  /*At work, and other situation.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 117) LABREL = 121014018.  /*At work, family holding, not specified.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 118) LABREL = 121014018.  /*At work, family holding, not agricultural.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 119) LABREL = 121014018.  /*At work, family holding, agricultural.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 120) LABREL = 121014018.  /*Have job, not at work in reference period.
+IF (MISSING(LABREL) & MISSING(CLASSWKD) & EMPSTATD = 140) LABREL = 121014018.  /*Marginally employed.
 EXECUTE.
 
 /* Allocation of active population.
 
-IF (MISSING(LABREL) & CLASSWKRD =   0) LABREL = 10205.                        /*NIU (not in universe) [In years with MISSING(EMPSTATD), this is the entire non-working population: therefore LABREL = 10205 instead of -1].
-IF (MISSING(LABREL) & CLASSWKRD = 100) LABREL = 121013.                       /*SELF-EMPLOYED.
-IF (MISSING(LABREL) & CLASSWKRD = 101) LABREL = 121.                          /*Self-employed, unincorporated.
-IF (MISSING(LABREL) & CLASSWKRD = 102) LABREL = 13.                           /*Self-employed, incorporated.
-IF (MISSING(LABREL) & CLASSWKRD = 110) LABREL = 13.                           /*Employer.
-IF (MISSING(LABREL) & CLASSWKRD = 111) LABREL = 13.                           /*Sharecropper, employer.
-IF (MISSING(LABREL) & CLASSWKRD = 120) LABREL = 121.                          /*Working on own account.
-IF (MISSING(LABREL) & CLASSWKRD = 121) LABREL = 121.                          /*Own account, agriculture.
-IF (MISSING(LABREL) & CLASSWKRD = 122) LABREL = 122.                          /*Domestic worker, self-employed.
-IF (MISSING(LABREL) & (MISSING(HEADLOC))  & CLASSWKRD = 123) LABREL = 41042.  /*Subsistence worker, own consumption.
-IF (MISSING(LABREL) & (HEADLOC =  PERNUM) & CLASSWKRD = 123) LABREL = 41.     /*Subsistence worker, own consumption [Head of household].
-IF (MISSING(LABREL) & (HEADLOC ~= PERNUM) & CLASSWKRD = 123) LABREL = 42.     /*Subsistence worker, own consumption [Not head of household].
-IF (MISSING(LABREL) & CLASSWKRD = 124) LABREL = 121.                          /*Own account, other.
-IF (MISSING(LABREL) & CLASSWKRD = 125) LABREL = 121.                          /*Own account, without temporary/unpaid help.
-IF (MISSING(LABREL) & CLASSWKRD = 126) LABREL = 121.                          /*Own account, with temporary/unpaid help.
-IF (MISSING(LABREL) & CLASSWKRD = 130) LABREL = 144.                          /*Member of cooperative.
-IF (MISSING(LABREL) & CLASSWKRD = 140) LABREL = 141.                          /*Sharecropper.
-IF (MISSING(LABREL) & CLASSWKRD = 141) LABREL = 121.                          /*Sharecropper, self-employed.
-IF (MISSING(LABREL) & CLASSWKRD = 142) LABREL = 141.                          /*Sharecropper, employee.
-IF (MISSING(LABREL) & CLASSWKRD = 150) LABREL = 144.                          /*Kibbutz member.
-IF (MISSING(LABREL) & CLASSWKRD = 200) LABREL = 14018.                        /*WAGE/SALARY WORKER.
-IF (MISSING(LABREL) & CLASSWKRD = 201) LABREL = 14018.                        /*Management.
-IF (MISSING(LABREL) & CLASSWKRD = 202) LABREL = 14018.                        /*Non-management.
-IF (MISSING(LABREL) & CLASSWKRD = 203) LABREL = 14018.                        /*White collar (non-manual).
-IF (MISSING(LABREL) & CLASSWKRD = 204) LABREL = 14018.                        /*Blue collar (manual).
-IF (MISSING(LABREL) & CLASSWKRD = 205) LABREL = 14018.                        /*White and blue collar.
-IF (MISSING(LABREL) & CLASSWKRD = 206) LABREL = 14018.                        /*Day laborer.
-IF (MISSING(LABREL) & CLASSWKRD = 207) LABREL = 14018.                        /*Employee, with a permanent job.
-IF (MISSING(LABREL) & CLASSWKRD = 208) LABREL = 14018.                        /*Employee, occasional, temporary, contract.
-IF (MISSING(LABREL) & CLASSWKRD = 209) LABREL = 14018.                        /*Employee without legal contract.
-IF (MISSING(LABREL) & CLASSWKRD = 210) LABREL = 14018.                        /*Wage/salary worker, private employer.
-IF (MISSING(LABREL) & CLASSWKRD = 211) LABREL = 15.                           /*Apprentice.
-IF (MISSING(LABREL) & CLASSWKRD = 212) LABREL = 18.                           /*Religious worker.
-IF (MISSING(LABREL) & CLASSWKRD = 213) LABREL = 18.                           /*Wage/salary worker, non-profit, NGO.
-IF (MISSING(LABREL) & CLASSWKRD = 214) LABREL = 14.                           /*White collar, private.
-IF (MISSING(LABREL) & CLASSWKRD = 215) LABREL = 14.                           /*Blue collar, private.
-IF (MISSING(LABREL) & CLASSWKRD = 216) LABREL = 14.                           /*Paid family worker.
-IF (MISSING(LABREL) & CLASSWKRD = 217) LABREL = 144.                          /*Cooperative employee.
-IF (MISSING(LABREL) & CLASSWKRD = 220) LABREL = 18.                           /*Wage/salary worker, government.
-IF (MISSING(LABREL) & CLASSWKRD = 221) LABREL = 18.                           /*Federal, government employee.
-IF (MISSING(LABREL) & CLASSWKRD = 222) LABREL = 18.                           /*State government employee.
-IF (MISSING(LABREL) & CLASSWKRD = 223) LABREL = 18.                           /*Local government employee.
-IF (MISSING(LABREL) & CLASSWKRD = 224) LABREL = 14.                           /*White collar, public.
-IF (MISSING(LABREL) & CLASSWKRD = 225) LABREL = 14.                           /*Blue collar, public.
-IF (MISSING(LABREL) & CLASSWKRD = 226) LABREL = 18.                           /*Public companies.
-IF (MISSING(LABREL) & CLASSWKRD = 227) LABREL = 18.                           /*Civil servants, local collectives.
-IF (MISSING(LABREL) & CLASSWKRD = 230) LABREL = 14.                           /*Domestic worker (work for private household).
-IF (MISSING(LABREL) & CLASSWKRD = 240) LABREL = 14.                           /*Seasonal migrant.
-IF (MISSING(LABREL) & CLASSWKRD = 241) LABREL = 14.                           /*Seasonal migrant, no broker.
-IF (MISSING(LABREL) & CLASSWKRD = 242) LABREL = 14.                           /*Seasonal migrant, uses broker.
-IF (MISSING(LABREL) & CLASSWKRD = 250) LABREL = 14018.                        /*Other wage and salary.
-IF (MISSING(LABREL) & CLASSWKRD = 251) LABREL = 14018.                        /*Canal zone/commission employee [NB. Panama].
-IF (MISSING(LABREL) & CLASSWKRD = 252) LABREL = 18.                           /*Government employment/training program.
-IF (MISSING(LABREL) & CLASSWKRD = 253) LABREL = 18.                           /*Mixed state/private enterprise/parastatal.
-IF (MISSING(LABREL) & CLASSWKRD = 254) LABREL = 18.                           /*Government public work program.
-IF (MISSING(LABREL) & CLASSWKRD = 300) LABREL = 122.                          /*UNPAID WORKER.
-IF (MISSING(LABREL) & CLASSWKRD = 310) LABREL = 122.                          /*Unpaid family worker.
-IF (MISSING(LABREL) & CLASSWKRD = 320) LABREL = 15.                           /*Apprentice, unpaid or unspecified.
-IF (MISSING(LABREL) & CLASSWKRD = 330) LABREL = 14.                           /*Trainee.
-IF (MISSING(LABREL) & CLASSWKRD = 340) LABREL = 14015.                        /*Apprentice or trainee.
-IF (MISSING(LABREL) & CLASSWKRD = 350) LABREL = 122.                          /*Works for others without wage.
-IF (MISSING(LABREL) & CLASSWKRD = 400) LABREL = 121014018.                    /*OTHER.
-IF (MISSING(LABREL) & CLASSWKRD = 999) LABREL = -1.                           /*UNKNOWN/MISSING.
+IF (MISSING(LABREL) & CLASSWKD =   0) LABREL = 10205.                        /*NIU (not in universe) [In years with MISSING(EMPSTATD), this is the entire non-working population: therefore LABREL = 10205 instead of -1].
+IF (MISSING(LABREL) & CLASSWKD = 100) LABREL = 121013.                       /*SELF-EMPLOYED.
+IF (MISSING(LABREL) & CLASSWKD = 101) LABREL = 121.                          /*Self-employed, unincorporated.
+IF (MISSING(LABREL) & CLASSWKD = 102) LABREL = 13.                           /*Self-employed, incorporated.
+IF (MISSING(LABREL) & CLASSWKD = 110) LABREL = 13.                           /*Employer.
+IF (MISSING(LABREL) & CLASSWKD = 111) LABREL = 13.                           /*Sharecropper, employer.
+IF (MISSING(LABREL) & CLASSWKD = 120) LABREL = 121.                          /*Working on own account.
+IF (MISSING(LABREL) & CLASSWKD = 121) LABREL = 121.                          /*Own account, agriculture.
+IF (MISSING(LABREL) & CLASSWKD = 122) LABREL = 122.                          /*Domestic worker, self-employed.
+IF (MISSING(LABREL) & (MISSING(HEADLOC))  & CLASSWKD = 123) LABREL = 41042.  /*Subsistence worker, own consumption.
+IF (MISSING(LABREL) & (HEADLOC =  PERNUM) & CLASSWKD = 123) LABREL = 41.     /*Subsistence worker, own consumption [Head of household].
+IF (MISSING(LABREL) & (HEADLOC ~= PERNUM) & CLASSWKD = 123) LABREL = 42.     /*Subsistence worker, own consumption [Not head of household].
+IF (MISSING(LABREL) & CLASSWKD = 124) LABREL = 121.                          /*Own account, other.
+IF (MISSING(LABREL) & CLASSWKD = 125) LABREL = 121.                          /*Own account, without temporary/unpaid help.
+IF (MISSING(LABREL) & CLASSWKD = 126) LABREL = 121.                          /*Own account, with temporary/unpaid help.
+IF (MISSING(LABREL) & CLASSWKD = 130) LABREL = 144.                          /*Member of cooperative.
+IF (MISSING(LABREL) & CLASSWKD = 140) LABREL = 141.                          /*Sharecropper.
+IF (MISSING(LABREL) & CLASSWKD = 141) LABREL = 121.                          /*Sharecropper, self-employed.
+IF (MISSING(LABREL) & CLASSWKD = 142) LABREL = 141.                          /*Sharecropper, employee.
+IF (MISSING(LABREL) & CLASSWKD = 150) LABREL = 144.                          /*Kibbutz member.
+IF (MISSING(LABREL) & CLASSWKD = 200) LABREL = 14018.                        /*WAGE/SALARY WORKER.
+IF (MISSING(LABREL) & CLASSWKD = 201) LABREL = 14018.                        /*Management.
+IF (MISSING(LABREL) & CLASSWKD = 202) LABREL = 14018.                        /*Non-management.
+IF (MISSING(LABREL) & CLASSWKD = 203) LABREL = 14018.                        /*White collar (non-manual).
+IF (MISSING(LABREL) & CLASSWKD = 204) LABREL = 14018.                        /*Blue collar (manual).
+IF (MISSING(LABREL) & CLASSWKD = 205) LABREL = 14018.                        /*White and blue collar.
+IF (MISSING(LABREL) & CLASSWKD = 206) LABREL = 14018.                        /*Day laborer.
+IF (MISSING(LABREL) & CLASSWKD = 207) LABREL = 14018.                        /*Employee, with a permanent job.
+IF (MISSING(LABREL) & CLASSWKD = 208) LABREL = 14018.                        /*Employee, occasional, temporary, contract.
+IF (MISSING(LABREL) & CLASSWKD = 209) LABREL = 14018.                        /*Employee without legal contract.
+IF (MISSING(LABREL) & CLASSWKD = 210) LABREL = 14018.                        /*Wage/salary worker, private employer.
+IF (MISSING(LABREL) & CLASSWKD = 211) LABREL = 15.                           /*Apprentice.
+IF (MISSING(LABREL) & CLASSWKD = 212) LABREL = 18.                           /*Religious worker.
+IF (MISSING(LABREL) & CLASSWKD = 213) LABREL = 18.                           /*Wage/salary worker, non-profit, NGO.
+IF (MISSING(LABREL) & CLASSWKD = 214) LABREL = 14.                           /*White collar, private.
+IF (MISSING(LABREL) & CLASSWKD = 215) LABREL = 14.                           /*Blue collar, private.
+IF (MISSING(LABREL) & CLASSWKD = 216) LABREL = 14.                           /*Paid family worker.
+IF (MISSING(LABREL) & CLASSWKD = 217) LABREL = 144.                          /*Cooperative employee.
+IF (MISSING(LABREL) & CLASSWKD = 220) LABREL = 18.                           /*Wage/salary worker, government.
+IF (MISSING(LABREL) & CLASSWKD = 221) LABREL = 18.                           /*Federal, government employee.
+IF (MISSING(LABREL) & CLASSWKD = 222) LABREL = 18.                           /*State government employee.
+IF (MISSING(LABREL) & CLASSWKD = 223) LABREL = 18.                           /*Local government employee.
+IF (MISSING(LABREL) & CLASSWKD = 224) LABREL = 14.                           /*White collar, public.
+IF (MISSING(LABREL) & CLASSWKD = 225) LABREL = 14.                           /*Blue collar, public.
+IF (MISSING(LABREL) & CLASSWKD = 226) LABREL = 18.                           /*Public companies.
+IF (MISSING(LABREL) & CLASSWKD = 227) LABREL = 18.                           /*Civil servants, local collectives.
+IF (MISSING(LABREL) & CLASSWKD = 230) LABREL = 14.                           /*Domestic worker (work for private household).
+IF (MISSING(LABREL) & CLASSWKD = 240) LABREL = 14.                           /*Seasonal migrant.
+IF (MISSING(LABREL) & CLASSWKD = 241) LABREL = 14.                           /*Seasonal migrant, no broker.
+IF (MISSING(LABREL) & CLASSWKD = 242) LABREL = 14.                           /*Seasonal migrant, uses broker.
+IF (MISSING(LABREL) & CLASSWKD = 250) LABREL = 14018.                        /*Other wage and salary.
+IF (MISSING(LABREL) & CLASSWKD = 251) LABREL = 14018.                        /*Canal zone/commission employee [NB. Panama].
+IF (MISSING(LABREL) & CLASSWKD = 252) LABREL = 18.                           /*Government employment/training program.
+IF (MISSING(LABREL) & CLASSWKD = 253) LABREL = 18.                           /*Mixed state/private enterprise/parastatal.
+IF (MISSING(LABREL) & CLASSWKD = 254) LABREL = 18.                           /*Government public work program.
+IF (MISSING(LABREL) & CLASSWKD = 300) LABREL = 122.                          /*UNPAID WORKER.
+IF (MISSING(LABREL) & CLASSWKD = 310) LABREL = 122.                          /*Unpaid family worker.
+IF (MISSING(LABREL) & CLASSWKD = 320) LABREL = 15.                           /*Apprentice, unpaid or unspecified.
+IF (MISSING(LABREL) & CLASSWKD = 330) LABREL = 14.                           /*Trainee.
+IF (MISSING(LABREL) & CLASSWKD = 340) LABREL = 14015.                        /*Apprentice or trainee.
+IF (MISSING(LABREL) & CLASSWKD = 350) LABREL = 122.                          /*Works for others without wage.
+IF (MISSING(LABREL) & CLASSWKD = 400) LABREL = 121014018.                    /*OTHER.
+IF (MISSING(LABREL) & CLASSWKD = 999) LABREL = -1.                           /*UNKNOWN/MISSING.
 EXECUTE.
 
 /* Re-allocation of active population, unclear public/private.
@@ -283,3 +283,6 @@ IF (LABREL = 121014018 & EMPSECT = 61) LABREL = 121014018.    /*Canal zone [NB. 
 IF (LABREL = 121014018 & EMPSECT = 62) LABREL = 18.           /*Faith-based organization.
 IF (LABREL = 121014018 & EMPSECT = 99) LABREL = 121014018.    /*Unknown.
 EXECUTE.
+
+*/ Running the syntax on 22/01/2016 took 55 seconds on a OS X El Capitan: MacBook Pro 11,2 / Intel Core i7 / 2.8 GHz 
+*/ quadcore / 16GB memory. Using India samples (1983, 1987, 1993, 1999, 2004) which have combined just under 3 million cases.
