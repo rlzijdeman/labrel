@@ -1,6 +1,6 @@
 * Encoding: UTF-8.
 GET FILE='/Users/RombertSt/Desktop/IPUMS/International/India.sav'.
-/* Pas locatie (+ eventueel naam) aan van bestand.
+/* Adjust location and file name to your specific case.
 WEIGHT BY PERWT.
 NUMERIC LABREL (f16).
 NUMERIC LABREL_2 (f16).
@@ -282,6 +282,9 @@ IF (LABREL = 121014018 & EMPSECT = 60) LABREL = 121014018.    /*Other, unspecifi
 IF (LABREL = 121014018 & EMPSECT = 61) LABREL = 121014018.    /*Canal zone [NB. Panama].
 IF (LABREL = 121014018 & EMPSECT = 62) LABREL = 18.           /*Faith-based organization.
 IF (LABREL = 121014018 & EMPSECT = 99) LABREL = 121014018.    /*Unknown.
+EXECUTE.
+
+FREQUENCIES VARIABLES=LABREL.
 EXECUTE.
 
 */ Running the syntax on 22/01/2016 took 55 seconds on a OS X El Capitan: MacBook Pro 11,2 / Intel Core i7 / 2.8 GHz 
