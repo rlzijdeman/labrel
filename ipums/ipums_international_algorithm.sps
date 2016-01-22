@@ -290,3 +290,4 @@ EXECUTE.
 
 */ Running the syntax on 22/01/2016 took 55 seconds on a OS X El Capitan: MacBook Pro 11,2 / Intel Core i7 / 2.8 GHz 
 */ quadcore / 16GB memory. Using India samples (1983, 1987, 1993, 1999, 2004) which have combined just under 3 million cases.
+*/ A large file, 270 million cases, takes over an hour.
