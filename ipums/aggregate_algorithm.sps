@@ -7,6 +7,7 @@ EXECUTE.
 
 VARIABLE LABELS LABREL "Labour relations, taxonomy v.2015".
 VALUE LABELS LABREL
+-2 "-2: Not classifiable (age under 16)" 
 -1 "-1: Not classifiable (as presented in source)" 	 
 1 "1: Cannot work or cannot be expected to work"
 2 "2: Affluent"
@@ -49,15 +50,17 @@ VALUE LABELS LABREL
 121014018 "12a or 14 or 18: Self-employed leading producer or Wage earners for the market or WE for non-market institutions".
 EXECUTE.
 
-/* IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-1. 
+/* IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-2. 
 /* EXECUTE. 
 /* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over 
 /* tijd. Ongeveer 1-3% van alle individuen van 16jr (sic, oude berekening) en jonger uit het VS bestand is wel degelijk 
 /* werkzaam volgens de census. Vaak gaat het dan om 14, 15jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
 
-/* UPDATE 17/11: Een betere manier is om dit weg te laten (we vergelijken immers individuen, en de consistente vergelijking 
+/* UPDATE 17/11/2015: Een betere manier is om dit weg te laten (we vergelijken immers individuen, en de consistente vergelijking 
 /* is vooral nuttig bij geaggregeerde data). Mochten we toch geaggregeerde data willen, is het super makkelijk om achteraf 
 /* alles af te toppen, ipv vooraf.
+
+/* UPDATE 6/7/2016: Nieuwe voorstel is om alle leeftijden onder 16 als -2 te classificeren, zodat onderscheid met "Unknown" scherp is.
 
 IF  (MISSING(LABREL) & OCC1950 = 987) LABREL=8. 
 EXECUTE.
