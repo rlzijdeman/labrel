@@ -50,8 +50,8 @@ VALUE LABELS LABREL
 121014018 "12a or 14 or 18: Self-employed leading producer or Wage earners for the market or WE for non-market institutions".
 EXECUTE.
 
-/* IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-2. 
-/* EXECUTE. 
+IF  (MISSING(LABREL)  & AGE <= 15) LABREL=-2. 
+EXECUTE. 
 /* Dit vernietigt direct alle kans om kinderarbeid er uit te halen, maar zorgt wel voor een consistente vergelijking over 
 /* tijd. Ongeveer 1-3% van alle individuen van 16jr (sic, oude berekening) en jonger uit het VS bestand is wel degelijk 
 /* werkzaam volgens de census. Vaak gaat het dan om 14, 15jarigen. Meestal zijn mensen jonger dan dat niet ondervraagd.
