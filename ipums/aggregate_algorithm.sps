@@ -63,53 +63,13 @@ EXECUTE.
 /* UPDATE 6/7/2016: Nieuwe voorstel is om alle leeftijden onder 16 als -2 te classificeren, zodat onderscheid met "Unknown" scherp is.
 
 IF  (MISSING(LABREL) & OCC1950 = 987) LABREL=8. 
-EXECUTE.
-/* Inmates: hier al, omdat deze anders of bij labrel 1, 105 of 3 terecht komen.
-
+IF  (MISSING(LABREL) & (OCC1950 = 980 | OCC1950 = 981 | OCC1950 = 982)) LABREL=5.
+IF  (MISSING(LABREL) & (OCC1950 = 983 | OCC1950 = 984 | OCC1950 = 986)) LABREL=1.
+IF  (MISSING(LABREL) & (OCC1950 = 985 | OCC1950 = 990)) LABREL=3.
+IF  (MISSING(LABREL) & OCC1950 = 995) LABREL=105.
 IF  (MISSING(LABREL) & OCC1950 = 991) LABREL=2. 
 EXECUTE.
-/* Gentleman/lady/at leisure, zelfde reden.
-
-IF  (MISSING(LABREL)  & (EMPSTATD = 32 | EMPSTATD = 33)) LABREL=1. 
-EXECUTE.
-IF  (MISSING(LABREL)  & EMPSTATD = 34) LABREL=105. 
-EXECUTE.
-/* "Not in labour force, other" > restant na aftrek 'Housework', 'School', 'Unable'. Dus o.a. "people who simply choose not 
-/* to work or to look for work"? Maar afgaand van enkele voorbeelden lijkt affluent (2) toch niet helemaal juist: dus LR 105.
-
-IF  (MISSING(LABREL)  & (EMPSTATD = 20 | EMPSTATD = 21 | EMPSTATD = 22)) LABREL=3. 
-EXECUTE. 
-IF  (MISSING(LABREL)  & EMPSTATD = 31) LABREL=5. 
-EXECUTE. 
-IF  (MISSING(LABREL)  & EMPSTATD = 30) LABREL=105. 
-EXECUTE.
-/* Dit omvat ook alle gepensioneerden. Moeten we een cutoff point bij bepaalde leeftijd maken?.
-
-/* Volgende set hier nu ingevoegd, om te voorkomen dat deze beroepen worden verdeeld over alles en nog wat.
-IF  (MISSING(LABREL) & (OCC1950 = 9 | OCC1950 = 595)) LABREL=18.
-EXECUTE.
-IF  (MISSING(LABREL) & OCC1950 = 820) LABREL=14.
-EXECUTE.
-IF  (MISSING(LABREL) & OCC1950 = 830) LABREL=122.
-EXECUTE.
-IF  (MISSING(LABREL) & OCC1950 = 840) LABREL=121.
-EXECUTE.
-IF  (MISSING(LABREL) & (OCC1950 = 980 | OCC1950 = 981 | OCC1950 = 982)) LABREL=5.
-EXECUTE.
-IF  (MISSING(LABREL) & (OCC1950 = 983 | OCC1950 = 984 | OCC1950 = 986)) LABREL=1.
-EXECUTE.
-IF  (MISSING(LABREL) & (OCC1950 = 985 | OCC1950 = 990)) LABREL=3.
-EXECUTE.
-IF  (MISSING(LABREL) & OCC1950 = 995) LABREL=105.
-EXECUTE.
-/* Het gaat hier om beroepencoderingen in OCC1950 die onmiskenbaar een bepaalde labrel vertegenwoordigen:
-/* 009: Clergymen [18]
-/* 595: Members of the armed services [18]
-/* 820: Farm laborers, wage workers [14]
-/* 830: Farm laborers, unpaid family workers [12b]
-/* 840: Farm service workers, self-employed [12a]
-/* 
-/* En de 'non-occupational responses' 1850-1930:
+/* Allereerst enkele 'non-occupational responses' 1850-1930, omdat deze anders of bij labrel 1, 105 of 3 terecht komen:
 /* 980: Keeps house/housekeeping at home/housewife [5]
 /* 981: Inputed keeping house (1850-1900) [5]
 /* 982: Helping at home/helps parents/housework [5]
@@ -117,23 +77,44 @@ EXECUTE.
 /* 984: Retired [1]
 /* 985: Unemployed/without occupation [3]
 /* 986: Invalid/disabled with no occupation reported [1]
-/* Reeds eerder: 987: Inmate [8]
+/* 987: Inmate [8]
 /* 990: New Worker [3]
-/* Reeds eerder: 991: Gentleman/lady/at leisure [2]
-/* 995: Other non-occupational response [105].
+/* 991: Gentleman/lady/at leisure [2]
+/* 995: Other non-occupational response [105]
+/* UPDATE 10/1/2018: deels verplaatst van hieronder. 
+
+IF  (MISSING(LABREL)  & (EMPSTATD = 32 | EMPSTATD = 33)) LABREL=1. 
+IF  (MISSING(LABREL)  & EMPSTATD = 34) LABREL=105. 
+/* "Not in labour force, other" > restant na aftrek 'Housework', 'School', 'Unable'. Dus o.a. "people who simply choose not 
+/* to work or to look for work"? Maar afgaand van enkele voorbeelden lijkt affluent (2) toch niet helemaal juist: dus LR 105.
+IF  (MISSING(LABREL)  & (EMPSTATD = 20 | EMPSTATD = 21 | EMPSTATD = 22)) LABREL=3. 
+IF  (MISSING(LABREL)  & EMPSTATD = 31) LABREL=5. 
+IF  (MISSING(LABREL)  & EMPSTATD = 30) LABREL=105. 
+EXECUTE.
+/* Dit omvat ook alle gepensioneerden. Moeten we een cutoff point bij bepaalde leeftijd maken?.
+
+/* Volgende set beroepen hier nu ingevoegd, om te voorkomen dat deze beroepen worden verdeeld over alles en nog wat.
+IF  (MISSING(LABREL) & (OCC1950 = 9 | OCC1950 = 595)) LABREL=18.
+IF  (MISSING(LABREL) & OCC1950 = 820) LABREL=14.
+IF  (MISSING(LABREL) & OCC1950 = 830) LABREL=122.
+IF  (MISSING(LABREL) & OCC1950 = 840) LABREL=121.
+EXECUTE.
+/* Het gaat hier om beroepencoderingen in OCC1950 die onmiskenbaar een bepaalde labrel vertegenwoordigen:
+/* 009: Clergymen [18]
+/* 595: Members of the armed services [18]
+/* 820: Farm laborers, wage workers [14]
+/* 830: Farm laborers, unpaid family workers [12b]
+/* 840: Farm service workers, self-employed [12a].
 
 IF  (MISSING(LABREL)  & EMPSTATD = 00 & YEAR = 1910 & CLASSWKRD = 11) LABREL=13. 
-EXECUTE. 
 IF  (MISSING(LABREL)  & EMPSTATD = 00 & YEAR = 1910 & CLASSWKRD = 12) LABREL=121. 
 EXECUTE. 
-IF  (MISSING(LABREL)  & EMPSTATD = 00) LABREL=1. 
-EXECUTE. 
+IF  (MISSING(LABREL)  & EMPSTATD = 00) LABREL=1.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 10 | CLASSWKRD = 14 )) LABREL=121013. 
-EXECUTE. 
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & CLASSWKRD = 11 ) LABREL=13. 
-EXECUTE. 
+
 /* Ben niet zeker of CLASSWKRD=14 (="Self-employed, incorporated"; waarbij incorporated betekent of het bedrijf is 
 /* geregistreerd bij de belastingdienst) als employer kan worden gerekend. 
 /* Hippler 2009 hierover: "Since 1967, the offcial estimates of self-employment published by the Bureau of Labor Statistics 
@@ -149,61 +130,33 @@ EXECUTE.
 
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 12 | CLASSWKRD = 13 )) LABREL=121. 
-EXECUTE.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & CLASSWKRD = 29 ) LABREL=122. 
-EXECUTE.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
-    (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 20 | CLASSWKRD = 21 ) & OCC1950 = 830) LABREL=122. 
-EXECUTE.  
+    (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 20 | CLASSWKRD = 21 ) & OCC1950 = 830) LABREL=122.  
+EXECUTE.
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
-    (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 20 | CLASSWKRD = 21 )) LABREL=14018. 
-EXECUTE.  
+    (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 20 | CLASSWKRD = 21 )) LABREL=14018.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & CLASSWKRD = 22 ) LABREL=14. 
-EXECUTE.  
 IF  (MISSING(LABREL)  & ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | EMPSTATD = 15) | 
     (MISSING(EMPSTATD) & YEAR = 1920)) & ( CLASSWKRD = 23 | CLASSWKRD = 24 | CLASSWKRD = 25 | CLASSWKRD = 26 | CLASSWKRD = 27 | 
     CLASSWKRD = 28 )) LABREL=18.
 EXECUTE. 
-IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & YEAR = 1850 & LABFORCE = 0)) LABREL=-1. 
-EXECUTE.  
+
+IF  (MISSING(LABREL) & (MISSING(EMPSTATD) & YEAR = 1850 & LABFORCE = 0)) LABREL=-1.  
 /* Het probleem is dat de 1850 census alleen mensen "in the labour force" noemt, als zij man en 16+ zijn. Dat betekent dat 
 /* alle vrouwen en kinderen als "niet-werkend" worden opgevat. 
 /* In vergelijking met 1860 zal ongeveer 18% van deze groep (944,614) een labrel tussen 12a en 18 moeten hebben; de rest is 
 /* 105 (al kun je je ook daar van afvragen of het niet gaat om een onderrepresentatie van vrouwenarbeid).
-
 IF  (MISSING(LABREL) & MISSING(EMPSTATD) & YEAR ~= 1850 & LABFORCE = 0) LABREL=-1. 
 EXECUTE.  
+
 IF  (MISSING(LABREL) & MISSING(EMPSTATD) & LABFORCE = 1) LABREL=105. 
 EXECUTE.  
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 995 | OCC1950 = 997 )) LABREL=-1. 
-EXECUTE.  
-IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
-    LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 983 | OCC1950 = 984 | OCC1950 = 985 | OCC1950 = 
-    986 )) LABREL=1. 
-EXECUTE.  
-IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
-    LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 980 | OCC1950 = 981 | OCC1950 = 982 )) LABREL=5. 
-EXECUTE.  
-IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
-    LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 987 ) LABREL=8. 
-EXECUTE.  
-IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
-    LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 830 ) LABREL=122. 
-EXECUTE.  
-/* Je kunt je afvragen of we niet beter gewoon alle OCC1950=830 als LABREL=122 kunnen coderen, al is dat al gebeurd via 
-/* CLASSWKR als die juist is gecodeerd in IPUMS. 
-/* Dat blijkt echter niet het geval, OCC1950=830 heeft allerlei uiteenlopende CLASSWKR coderingen (zie ook aantal andere 
-/* beroepen). Moeten die niet voorrang krijgen in dit stroomschema, dus voordat de labrels via CLASSWKR worden verdeeld?.
-/* UPDATE nov'15: DIT GEBEURT AL BOVENIN SCHEMA. STRIKT GENOMEN KAN DEZE REGEL WEG (IDEM VGL-BARE OCC1950=830 REGEL BOVEN).
-
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 997 | OCC1950 = 999 )) LABREL=-1. 
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 1 | OCC1950 = 5 | OCC1950 = 6 | OCC1950 = 8 | 
@@ -252,12 +205,7 @@ IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) |
     68 | OCC1950 = 69 | OCC1950 = 77 | OCC1950 = 78 | OCC1950 = 79 | OCC1950 = 81 | OCC1950 = 82 | 
     OCC1950 = 84 | OCC1950 = 93 | OCC1950 = 210 | OCC1950 = 250 | OCC1950 = 260 | OCC1950 = 270 | 
     OCC1950 = 301 | OCC1950 = 325 | OCC1950 = 335 | OCC1950 = 595 | OCC1950 = 762 | OCC1950 = 771 | 
-    OCC1950 = 773 | OCC1950 = 782 )) LABREL=18. 
-EXECUTE.  
-IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
-    LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 999) LABREL=105. 
-EXECUTE.  
+    OCC1950 = 773 | OCC1950 = 782 )) LABREL=18.   
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 3 | OCC1950 = 4 | OCC1950 = 54 | OCC1950 = 70 | 
@@ -269,12 +217,10 @@ IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) |
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ( OCC1950 = 43 | OCC1950 = 53 | OCC1950 = 72 | OCC1950 = 76 | 
     OCC1950 = 83 | OCC1950 = 91 | OCC1950 = 92 | OCC1950 = 99 | OCC1950 = 630 | OCC1950 = 730 | OCC1950 
-    = 731 | OCC1950 = 732 | OCC1950 = 763 | OCC1950 = 770 | OCC1950 = 970 )) LABREL=14018. 
-EXECUTE.  
+    = 731 | OCC1950 = 732 | OCC1950 = 763 | OCC1950 = 770 | OCC1950 = 970 )) LABREL=14018.  
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
-    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 290) LABREL=121013014. 
-EXECUTE.  
+    EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 290) LABREL=121013014.  
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 & 
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 | 
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & OCC1950 = 75) LABREL=121014018. 
@@ -282,8 +228,11 @@ EXECUTE.
 
 */ Running the syntax on 17/11/2015 took 63 minutes on a OS X El Capitan: MacBook Pro 11,2 / Intel Core i7 / 2.8 GHz 
 */ quadcore / 16GB memory.
+*/ UPDATE 10/1/2018: reduced the number of executes in the syntax, and deleted some duplicate rules: must therefore be quicker now.  
 
-*/ TEMPORARY ADDITION.
+*/ TEMPORARY ADDITION:
+*/ Meant to aggregate self-employed and wage-earning categories, 
+*/ and add an numerical indication of the number of years of schooling, using available non-numerical values. 
 
 NUMERIC SE (f8).
 NUMERIC WE (f8).
