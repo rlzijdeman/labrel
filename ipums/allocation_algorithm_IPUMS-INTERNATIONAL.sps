@@ -150,14 +150,14 @@ EXECUTE.
 
 /* Allocation of secondary labour relation.
 
-IF (EMPSTATD = 345) LABREL_2 = 1.       /*At work, and 'student'.
-IF (EMPSTATD = 346) LABREL_2 = 5.       /*At work, and 'housework'.
-IF (EMPSTATD = 347) LABREL_2 = 3.       /*At work, and 'seeking work'.
-IF (EMPSTATD = 348) LABREL_2 = 1.       /*At work, and 'retired'.
-IF (EMPSTATD = 350) LABREL_2 = 3.       /*At work, and 'no work'.
-IF (EMPSTATD = 351) LABREL_2 = -1.      /*At work, and other situation.
-IF (EMPSTATD = 360) LABREL_2 = 3.       /*Have job, not at work in reference period.
-IF (EMPSTATD = 361) LABREL_2 = 3.       /*Armed forces, not at work in reference period.
+IF (EMPSTATD = 111) LABREL_2 = 1.       /*At work, and 'student'.
+IF (EMPSTATD = 112) LABREL_2 = 5.       /*At work, and 'housework'.
+IF (EMPSTATD = 113) LABREL_2 = 3.       /*At work, and 'seeking work'.
+IF (EMPSTATD = 114) LABREL_2 = 1.       /*At work, and 'retired'.
+IF (EMPSTATD = 115) LABREL_2 = 3.       /*At work, and 'no work'.
+IF (EMPSTATD = 116) LABREL_2 = -1.      /*At work, and other situation.
+IF (EMPSTATD = 120) LABREL_2 = 3.       /*Have job, not at work in reference period.
+IF (EMPSTATD = 132) LABREL_2 = 3.       /*Armed forces, not at work in reference period.
 IF (EMPSTATD = 140) LABREL_2 = 3.       /*Marginally employed.
 IF (EMPSTATD = 371) LABREL_2 = 121014.  /*Not working, seasonal worker.
 IF (EMPSTATD = 372) LABREL_2 = 121014.  /*Not working, occasional worker.
