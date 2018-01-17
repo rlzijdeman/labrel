@@ -188,6 +188,8 @@ IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) |
     (YEAR = 1880 & OCC1950 = 123) |
     (YEAR = 1880 & OCC1950 = 290))) LABREL=13.
 EXECUTE.
+/* Please note, this includes the sizeable OCC1950 categories 'farmers, owners and tenants' (100) and 
+/* 'managers, officials, and proprietors' (290). For both the trend 1910-40 shows a clear downward development.
 IF  (MISSING(LABREL) & ((MISSING(EMPSTATD) & (( YEAR = 1920 & CLASSWKRD = 00 ) | (YEAR  ~= 1920 &
     LABFORCE = 2))) | ((EMPSTATD = 10 | EMPSTATD = 11 | EMPSTATD = 12 | EMPSTATD = 13 | EMPSTATD = 14 |
     EMPSTATD = 15 ) & CLASSWKRD = 00 )) & ((YEAR = 1850 & OCC1950 = 0) |
